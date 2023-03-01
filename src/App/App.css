@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../Images/background.png");
+}
+
+.info-display {
+  height: 42vh;
+  background-image: url("../Images/marvel-header.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

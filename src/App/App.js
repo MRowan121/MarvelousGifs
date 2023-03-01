@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
+import './App.css'
+import characterList from '../Character-Data/characterList';
 
 class App extends Component {
   constructor() {
@@ -11,9 +13,11 @@ class App extends Component {
 
   render() {
     return (
-      <main>
+      <main className='app'>
         <Header />
-        <h1>Hi</h1>
+        <section className='info-display'>
+
+        </section>
       </main>
     )
   }
