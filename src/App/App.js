@@ -7,8 +7,12 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-
+      characters: []
     }
+  }
+
+  componentDidMount() {
+    this.setState({ characters: characterList})
   }
 
   render() {
