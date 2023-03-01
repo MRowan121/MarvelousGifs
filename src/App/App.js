@@ -25,10 +25,18 @@ class App extends Component {
     return (
       <main className='app'>
         <Header />
-        <section className='info-display'>
-
-        </section>
-        <Form names={this.state.characters} handleCallback={this.handleCallback}/>
+        {!this.state.userSelection ? 
+          <div>
+            <section className='info-display'>
+            
+            </section>
+            <Form names={this.state.characters} handleCallback={this.handleCallback} />
+          </div>
+        :
+          <section className='info-display'>
+            <h1>{this.state.userSelection}</h1>
+          </section>
+        }
       </main>
     )
   }

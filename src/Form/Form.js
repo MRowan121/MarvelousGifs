@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './Form.css'
 
 class Form extends Component {
     constructor() {
@@ -26,19 +27,20 @@ class Form extends Component {
         })
 
         return (
-            <form>
+            <form className="search-field">
                 <input 
                     type="search" 
                     list="names" 
                     placeholder="Search..." 
-                    value={this.state.userSelection}
                     onChange={this.handleChange}
                     required
                  />
-                <datalist id="names">{options}</datalist>
+                <datalist id="names">
+                    {options}
+                </datalist>
                 <button 
                     type='submit'
-                    onClick={this.handleSubmit} 
+                    onClick={this.handleSubmit}
                 >
                     Submit
                 </button>
