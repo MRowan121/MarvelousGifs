@@ -23,15 +23,30 @@ class App extends Component {
   }
 
   render() {
+    const nameDisplay = this.state.characters.map((name, index) => {
+      return (
+        <p key={index}>{name}</p>
+      )
+    })
+    
     return (
       <main className='app'>
         <Header />
         {!this.state.userSelection ? 
           <div>
             <section className='info-display'>
-            
+              <div className='text-container'>
+                <h2>FIND GIFS FOR YOUR FAVORITE HEROES & VILLAINS</h2>
+                <h3>Search in the form or select a character to get started</h3>
+                <Form names={this.state.characters} handleCallback={this.handleCallback} />
+              </div>
             </section>
-            <Form names={this.state.characters} handleCallback={this.handleCallback} />
+            <section className='bottom-container'>
+              <div className='character-list'>
+                {nameDisplay}
+              </div>
+            </section>
+
           </div>
         :
           <div>
