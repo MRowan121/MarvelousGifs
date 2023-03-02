@@ -1,4 +1,11 @@
 .header {
     height: 8vh;
     width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    align-self: center;
+    height: 7vh;
 }
