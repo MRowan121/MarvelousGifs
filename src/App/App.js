@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import './App.css'
 import characterList from '../Character-Data/characterList';
 import Form from '../Form/Form';
+import GifDisplay from '../GifDisplay/GifDisplay';
 
 class App extends Component {
   constructor() {
@@ -33,9 +34,12 @@ class App extends Component {
             <Form names={this.state.characters} handleCallback={this.handleCallback} />
           </div>
         :
-          <section className='info-display'>
-            <h1>{this.state.userSelection}</h1>
-          </section>
+          <div>
+            <section className='info-display'>
+              <h1>{this.state.userSelection}</h1>
+            </section>
+            <GifDisplay character={this.state.userSelection} />
+          </div>
         }
       </main>
     )

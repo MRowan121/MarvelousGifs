@@ -1,5 +1,5 @@
 const getGifs = (searchValue) => {
-    return fetch(`http://api.giphy.com/v1/gifs/search?q=${searchValue}&api_key=QQRengN3S8waij1rwiejGypXXSF6lqN4`)
+    return fetch(`http://api.giphy.com/v1/gifs/search?q=${searchValue}&limit=20&api_key=QQRengN3S8waij1rwiejGypXXSF6lqN4`)
     .then(res => {
             if (!res.ok) {
                 throw new Error('Something went wrong')
@@ -8,4 +8,4 @@ const getGifs = (searchValue) => {
         })
 }
 
-export default { getGifs }
+export { getGifs }
