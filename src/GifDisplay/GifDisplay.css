@@ -1,4 +1,29 @@
 .gif-display {
     height: 50vh;
     width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    cursor: pointer;
+}
+
+.swiper {
+    width: 95%;
+    height: 85%;
+}
+  
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: black;
+    height: calc((100% - 30px) / 2) !important;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
