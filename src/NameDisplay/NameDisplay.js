@@ -13,9 +13,11 @@ const NameDisplay = ({ characters }) => {
       })
     
     return (
+      <section className="bottom-container">
         <div className='character-list'>
             {nameDisplay}
         </div>
+      </section>
     )
 }
 

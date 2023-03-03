@@ -4,7 +4,7 @@ import './App.css'
 import characterList from '../Character-Data/characterList';
 import Form from '../Form/Form';
 import GifDisplay from '../GifDisplay/GifDisplay';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import NameDisplay from '../NameDisplay/NameDisplay';
 
 class App extends Component {
@@ -25,14 +25,6 @@ class App extends Component {
   }
 
   render() {
-    const nameDisplay = this.state.characters.map((name, index) => {
-      return (
-        <Link to={`/character/${name}`} key={index}>
-          <p className='underline'>{name}</p>
-        </Link>
-      )
-    })
-    
     return (
       <main className='app'>
         <Header />
@@ -46,9 +38,7 @@ class App extends Component {
                     <Form names={this.state.characters} handleCallback={this.handleCallback} />
                   </div>
                 </section>
-                <section className='bottom-container'>
-                    <NameDisplay characters={this.state.characters} />
-                </section>
+                <NameDisplay characters={this.state.characters} />
               </div>
             )
           }}/>

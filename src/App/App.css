@@ -84,8 +84,3 @@
   color: red;
 }
 
-.bottom-container {
-  height: 50vh;
-  width: 100vw;
-  overflow: auto;
-}
