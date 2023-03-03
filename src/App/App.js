@@ -5,6 +5,7 @@ import characterList from '../Character-Data/characterList';
 import Form from '../Form/Form';
 import GifDisplay from '../GifDisplay/GifDisplay';
 import { Route, Link } from 'react-router-dom';
+import NameDisplay from '../NameDisplay/NameDisplay';
 
 class App extends Component {
   constructor() {
@@ -46,9 +47,7 @@ class App extends Component {
                   </div>
                 </section>
                 <section className='bottom-container'>
-                  <div className='character-list'>
-                    {nameDisplay}
-                  </div>
+                    <NameDisplay characters={this.state.characters} />
                 </section>
               </div>
             )

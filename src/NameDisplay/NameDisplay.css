@@ -1,0 +1,25 @@
+.character-list {
+    padding: 2vh 4vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 2fr));
+    align-items: center;
+    justify-items: center;
+}
+  
+.character-list > a {
+    font-weight: bold;
+    font-size: x-large;
+    padding: 0em 1em;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+  
+.character-list > a:hover {
+    cursor: pointer;
+    color: red;
+}
