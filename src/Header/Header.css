@@ -1,9 +1,10 @@
 .header {
-    height: 8vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 8vh;
+    justify-content: center;
+    width: 95%;
 }
 
 .logo {

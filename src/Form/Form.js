@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './Form.css'
 import { Link } from "react-router-dom";
+import { MdOutlineSearch } from "react-icons/md";
 
 class Form extends Component {
     constructor() {
@@ -15,8 +16,8 @@ class Form extends Component {
         this.setState({ userSelection: selectedCharacter === undefined ? '' : selectedCharacter})
     }
 
-    handleSubmit = (e) => {
-        this.props.handleCallback(this.state.userSelection)
+    clearInputs = () => {
+        this.setState({ userSelection:'' })
     }
 
     render() {
@@ -27,23 +28,21 @@ class Form extends Component {
         })
 
         return (
-            <form className="search-field">
+            <form className="form">
                 <input 
                     type="search" 
+                    className="search-field"
                     list="names" 
                     placeholder="Search..." 
                     onChange={this.handleChange}
                     required
-                 />
-                <datalist id="names">
-                    {options}
-                </datalist>
-                <Link to={`/character/${this.state.userSelection}`}>
-                    <button 
-                        type='submit'
-                        onClick={this.handleSubmit}
-                        >
-                        Submit
+                />
+                    <datalist id="names">
+                        {options}
+                    </datalist>
+                <Link to={`/character/${this.state.userSelection}`} className="btn-link">
+                    <button type='submit' className="search-btn" onClick={this.clearInputs}>
+                        <MdOutlineSearch />
                     </button>
                 </Link>
             </form>
