@@ -27,7 +27,7 @@ class GifDisplay extends Component {
     
     componentDidMount() {
         const cleanData = []
-        getGifs(this.props.character)
+        getGifs(this.props.character, 30)
             .then(data => {
                 console.log(data)
                 data.data.forEach(obj => {
