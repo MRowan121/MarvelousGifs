@@ -27,9 +27,8 @@ class GifDisplay extends Component {
     
     componentDidMount() {
         const cleanData = []
-        getGifs(this.props.character)
+        getGifs(this.props.selection, 30)
             .then(data => {
-                console.log(data)
                 data.data.forEach(obj => {
                     const gif = {}
 
@@ -66,13 +65,13 @@ class GifDisplay extends Component {
                     autoplay={{
                         delay: 2500,
                         disableOnInteraction: true,
-                      }}
+                    }}
                     grid={{
-                    rows: 2,
+                        rows: 2,
                     }}
                     keyboard={{
                         enabled: true,
-                      }}
+                    }}
                     spaceBetween={30}
                     navigation={true}
                     modules={[Autoplay, Grid, Keyboard, Navigation]}

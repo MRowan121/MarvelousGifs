@@ -1,0 +1,38 @@
+.info-display {
+    align-items: center;
+    background-image: url("../Images/marvel-header.jpeg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 42vh;
+    justify-content: center;
+    width: 100vw;
+  }
+
+.text-container {
+    align-items: center;
+    background-image: url("../Images/background.png");
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #555;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: space-around;
+    padding: 3%;
+    text-align: center;
+    width: 30%;
+}
+
+.text-container > h1 {
+    color: red;
+    font-size: 6rem;
+}
+
+.text-container > h2 {
+    color: red;
+    font-size: 4rem;
+    margin: 0;
+    text-align: center;
+}
