@@ -21,7 +21,8 @@ class GifDisplay extends Component {
     constructor() {
         super()
         this.state = {
-            characterGifs: []
+            characterGifs: [],
+            error: ''
         }
     }
     
@@ -38,6 +39,9 @@ class GifDisplay extends Component {
                     this.setState({ characterGifs: cleanData})
                 })
             })
+            .catch(error => {
+				this.setState({ error: error })
+			})
     }
     
     render() {
@@ -60,25 +64,29 @@ class GifDisplay extends Component {
         
         return (
             <section className="gif-display">
-                <Swiper
-                    slidesPerView={4}
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: true,
-                    }}
-                    grid={{
-                        rows: 2,
-                    }}
-                    keyboard={{
-                        enabled: true,
-                    }}
-                    spaceBetween={30}
-                    navigation={true}
-                    modules={[Autoplay, Grid, Keyboard, Navigation]}
-                    className="mySwiper"
-                >
-                    {gifs}
-                </Swiper>
+                {this.state.error === '' ? 
+                    <Swiper
+                        slidesPerView={4}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: true,
+                        }}
+                        grid={{
+                            rows: 2,
+                        }}
+                        keyboard={{
+                            enabled: true,
+                        }}
+                        spaceBetween={30}
+                        navigation={true}
+                        modules={[Autoplay, Grid, Keyboard, Navigation]}
+                        className="mySwiper"
+                    >
+                        {gifs}
+                    </Swiper>
+                :
+                        <h1>hi</h1>
+                }
             </section>
         )
     }

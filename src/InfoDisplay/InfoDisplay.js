@@ -5,7 +5,7 @@ import Form from "../Form/Form";
 const InfoDisplay = ({ selection, characterList }) => {
     return (
         <section className="info-display">
-            {selection === '' ?
+            {selection === undefined ?
                 <div className='text-container'>
                     <h2>DISCOVER GIFS OF YOUR FAVORITE CHARACTERS</h2>
                     <Form names={characterList} />

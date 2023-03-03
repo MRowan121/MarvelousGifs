@@ -2,12 +2,15 @@ import React, { Component } from "react";
 import './Form.css'
 import { Link } from "react-router-dom";
 import { MdOutlineSearch } from "react-icons/md";
+import swal from 'sweetalert'
+
 
 class Form extends Component {
     constructor() {
         super()
         this.state ={
-            userSelection: ''
+            userSelection: '',
+            error: '',
         }
     }
 
@@ -16,8 +19,11 @@ class Form extends Component {
         this.setState({ userSelection: selectedCharacter === undefined ? '' : selectedCharacter})
     }
 
-    clearInputs = () => {
-        this.setState({ userSelection:'' })
+    handleSubmit = (e) => {
+        if(this.state.userSelection === '') {
+            this.setState({ error: "Input not found"})
+            swal('Character Not Found', 'Please try again!', 'error');
+        }
     }
 
     render() {
@@ -27,24 +33,26 @@ class Form extends Component {
             )
         })
 
+        const searchValidation = this.state.userSelection ? `/character/${this.state.userSelection}` :'/'
+
         return (
-            <form className="form">
+            <form className="form" onChange={this.handleChange}>
                 <input 
                     type="search" 
                     className="search-field"
                     list="names" 
                     placeholder="Search..." 
-                    onChange={this.handleChange}
+                    autoComplete="off"
                     required
                 />
                     <datalist id="names">
                         {options}
                     </datalist>
-                <Link to={`/character/${this.state.userSelection}`} className="btn-link">
-                    <button type='submit' className="search-btn" onClick={this.clearInputs}>
-                        <MdOutlineSearch />
-                    </button>
-                </Link>
+                <Link to={searchValidation} className="btn-link" tabIndex={-1}>
+                <button type='submit' className="search-btn" onClick={this.handleSubmit}>
+                    <MdOutlineSearch />
+                </button>
+            </Link> 
             </form>
         )
     }

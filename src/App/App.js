@@ -27,7 +27,7 @@ class App extends Component {
             return(
               <div>
                 <InfoDisplay 
-                  selection={''} 
+                  // selection={''} 
                   characterList={this.state.characters} 
                 />
                 <NameDisplay characters={this.state.characters} />
