@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './Form.css'
+import { Link } from "react-router-dom";
 
 class Form extends Component {
     constructor() {
@@ -15,7 +16,6 @@ class Form extends Component {
     }
 
     handleSubmit = (e) => {
-        e.preventDefault()
         this.props.handleCallback(this.state.userSelection)
     }
 
@@ -38,12 +38,14 @@ class Form extends Component {
                 <datalist id="names">
                     {options}
                 </datalist>
-                <button 
-                    type='submit'
-                    onClick={this.handleSubmit}
-                >
-                    Submit
-                </button>
+                <Link to={`/character/${this.state.userSelection}`}>
+                    <button 
+                        type='submit'
+                        onClick={this.handleSubmit}
+                        >
+                        Submit
+                    </button>
+                </Link>
             </form>
         )
     }
