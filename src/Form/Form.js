@@ -22,7 +22,13 @@ class Form extends Component {
     handleSubmit = (e) => {
         if(this.state.userSelection === '') {
             this.setState({ error: "Input not found"})
-            swal('Character Not Found', 'Please try again!', 'error');
+            swal({
+                title: 'Character Not Found',
+                text: 'Please check your search and try again!', 
+                icon: 'error'
+            });
+        } else {
+            this.props.handleCallback(this.state.userSelection)
         }
     }
 
@@ -50,7 +56,7 @@ class Form extends Component {
                     </datalist>
                 <Link to={searchValidation} className="btn-link" tabIndex={-1}>
                 <button type='submit' className="search-btn" onClick={this.handleSubmit}>
-                    <MdOutlineSearch />
+                    <MdOutlineSearch  />
                 </button>
             </Link> 
             </form>

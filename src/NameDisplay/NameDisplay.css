@@ -1,34 +1,34 @@
 .bottom-container {
     height: 50vh;
-    width: 100vw;
     overflow: auto;
+    width: 100vw;
 }
 
 .character-list {
-    padding: 2vh 4vw;
+    align-items: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 2fr));
-    align-items: center;
     justify-items: center;
+    padding: 2vh 4vw;
 }
   
 .character-list > a {
-    font-weight: bold;
-    font-size: 2rem;
-    padding: 0em 1em;
-    margin: 0;
-    text-decoration: none;
     color: black;
     cursor: pointer;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-weight: bold;
+    font-size: 1.5vw;
+    margin: 0;
     overflow: hidden;
-    -webkit-transition: color 0.5s; /* For Safari 3.0 to 6.0 */
+    padding: 0em 1em;
+    text-decoration: none;
+    text-overflow: ellipsis;
     transition: color 0.5s;
+    -webkit-transition: color 0.5s; /* For Safari 3.0 to 6.0 */
+    white-space: nowrap;
 }
   
 .character-list > a:hover {
-    cursor: pointer;
     color: red;
+    cursor: pointer;
     text-decoration: underline;
 }

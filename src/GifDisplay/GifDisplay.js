@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getGifs } from '../apiCalls'
+import { getGifs } from '../Utilities/apiCalls'
 import { 
     Swiper, 
     SwiperSlide
@@ -16,34 +16,43 @@ import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import swal from 'sweetalert'
+
+
 
 class GifDisplay extends Component {
     constructor() {
         super()
         this.state = {
             characterGifs: [],
-            error: ''
         }
     }
     
     componentDidMount() {
         const cleanData = []
-        getGifs(this.props.selection, 30)
+        if(getGifs(this.props.urlPath, 20) === undefined) {
+            swal({
+                title: `Character Not Found`,
+                text: 'Lets go home and try again!',
+                icon: 'error'
+            }).then(() => {
+                window.location.href='http://localhost:3000/'
+            });
+        } else {
+            getGifs(this.props.urlPath, 30)
             .then(data => {
                 data.data.forEach(obj => {
                     const gif = {}
-
+                    
                     gif.url = obj['embed_url']
                     gif.title = obj['title']
                     cleanData.push(gif)
                     this.setState({ characterGifs: cleanData})
                 })
             })
-            .catch(error => {
-				this.setState({ error: error })
-			})
+        }
     }
-    
+
     render() {
         const gifs = this.state.characterGifs.map((gif, index) => {
             return (
@@ -61,33 +70,36 @@ class GifDisplay extends Component {
                 </SwiperSlide>
             )
         })
-        
+
         return (
-            <section className="gif-display">
-                {this.state.error === '' ? 
+            <div>
+                <section className="info-display">
+                    <div className="text-container">
+                        <h1>{this.props.urlPath}</h1>
+                    </div>
+                </section>
+                <section className="gif-display">
                     <Swiper
-                        slidesPerView={4}
-                        autoplay={{
-                            delay: 2500,
-                            disableOnInteraction: true,
-                        }}
-                        grid={{
-                            rows: 2,
-                        }}
-                        keyboard={{
-                            enabled: true,
-                        }}
-                        spaceBetween={30}
-                        navigation={true}
-                        modules={[Autoplay, Grid, Keyboard, Navigation]}
-                        className="mySwiper"
+                    slidesPerView={4}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: true,
+                    }}
+                    grid={{
+                        rows: 2,
+                    }}
+                    keyboard={{
+                        enabled: true,
+                    }}
+                    spaceBetween={30}
+                    navigation={true}
+                    modules={[Autoplay, Grid, Keyboard, Navigation]}
+                    className="mySwiper"
                     >
                         {gifs}
                     </Swiper>
-                :
-                        <h1>hi</h1>
-                }
-            </section>
+                </section>
+            </div>
         )
     }
 }
