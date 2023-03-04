@@ -23,4 +23,13 @@ describe('main page', () => {
     .click()
     cy.url().should('eq', 'http://localhost:3000/')
   })
+
+  it('should notify and then redirect a user with a bad url', () => {
+    cy.visit('http://localhost:3000/character/Agatha%20Harknes')
+    cy.get('.swal-modal')
+      .should('be.visible')
+    cy.get('.swal-footer > div > button')
+      .click()
+    cy.url().should('eq', 'http://localhost:3000/')
+  })
 })
