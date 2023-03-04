@@ -6,7 +6,6 @@ import GifDisplay from '../GifDisplay/GifDisplay';
 import { Route } from 'react-router-dom';
 import NameDisplay from '../NameDisplay/NameDisplay';
 
-
 class App extends Component {
   constructor() {
     super()
