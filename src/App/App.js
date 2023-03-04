@@ -5,18 +5,23 @@ import characterList from '../Character-Data/characterList';
 import GifDisplay from '../GifDisplay/GifDisplay';
 import { Route } from 'react-router-dom';
 import NameDisplay from '../NameDisplay/NameDisplay';
-import InfoDisplay from '../InfoDisplay/InfoDisplay';
+
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       characters: [],
+      userSelection: '',
     }
   }
 
   componentDidMount() {
     this.setState({ characters: characterList})
+  }
+
+  handleCallback = (selection) => {
+    this.setState({ userSelection: selection})
   }
 
   render() {
@@ -25,22 +30,19 @@ class App extends Component {
         <Header />
           <Route exact path='/' render={() => {
             return(
-              <div>
-                <InfoDisplay 
-                  selection={''} 
-                  characterList={this.state.characters} 
-                />
-                <NameDisplay characters={this.state.characters} />
-              </div>
+              <NameDisplay 
+                characterList={this.state.characters} 
+                handleCallback={this.handleCallback}
+              />
             )
           }}/>
           <Route exact path={`/character/:selection`} render={({ match }) => {
-            let selection = match.params.selection
+            let urlPath = match.params.selection
             return (
-              <div>
-                <InfoDisplay selection={selection} />
-                <GifDisplay selection={selection} />
-              </div>
+              <GifDisplay 
+                characterList={this.state.characters} 
+                urlPath={urlPath}
+              />
             )
           }}/>
       </main>
