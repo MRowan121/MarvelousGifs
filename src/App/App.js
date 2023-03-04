@@ -16,10 +16,6 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    this.setState({ characters: characterList})
-  }
-
   handleCallback = (selection) => {
     this.setState({ userSelection: selection})
   }
@@ -31,7 +27,7 @@ class App extends Component {
           <Route exact path='/' render={() => {
             return(
               <NameDisplay 
-                characterList={this.state.characters} 
+                characterList={characterList} 
                 handleCallback={this.handleCallback}
               />
             )

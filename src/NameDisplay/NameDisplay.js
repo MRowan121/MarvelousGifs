@@ -7,7 +7,7 @@ const NameDisplay = ({ characterList, handleCallback }) => {
     
     const nameDisplay = characterList.map((name, index) => {
         return (
-          <Link to={`/character/${name}`} key={index}>
+          <Link to={`/character/${name}`} key={index} className={name}>
             <p className='underline'>{name}</p>
           </Link>
         )
