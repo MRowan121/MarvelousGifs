@@ -32,7 +32,7 @@ class App extends Component {
               />
             )
           }}/>
-          <Route exact path={`/character/:selection`} render={({ match }) => {
+          <Route exact path={`/:selection`} render={({ match }) => {
             let urlPath = match.params.selection
             return (
               <GifDisplay 

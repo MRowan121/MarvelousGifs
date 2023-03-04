@@ -29,7 +29,7 @@ describe('main page', () => {
       cy.get('.search-field').type('Agatha Harkness').should('have.value', 'Agatha Harkness')
       cy.get('.search-btn').click()
     })
-    cy.url().should('eq', 'http://localhost:3000/character/Agatha%20Harkness')
+    cy.url().should('eq', 'http://localhost:3000/Agatha%20Harkness')
   })
 
   it('should be able to navigate back home by clicking the logo', () => {
@@ -37,7 +37,7 @@ describe('main page', () => {
     .type('Agatha Harkness')
     cy.get('.search-btn')
     .click()
-    cy.url().should('eq', 'http://localhost:3000/character/Agatha%20Harkness')
+    cy.url().should('eq', 'http://localhost:3000/Agatha%20Harkness')
     cy.get('.logo')
     .click()
     cy.url().should('eq', 'http://localhost:3000/')
@@ -57,7 +57,7 @@ describe('main page', () => {
     .type('Agatha Harkness')
     cy.get('.search-btn')
     .click()
-    cy.url().should('eq', 'http://localhost:3000/character/Agatha%20Harkness')
+    cy.url().should('eq', 'http://localhost:3000/Agatha%20Harkness')
   })
 
   it('should display an error if user enters incorrect input', () => {
@@ -67,5 +67,14 @@ describe('main page', () => {
       .click()
     cy.get('.swal-modal')
       .should('be.visible')
+  })
+
+  it('should notify and then redirect a user with a bad url', () => {
+    cy.visit('http://localhost:3000/A')
+    cy.get('.swal-modal')
+      .should('be.visible')
+    cy.get('.swal-footer > div > button')
+      .click()
+    cy.url().should('eq', 'http://localhost:3000/')
   })
 })
