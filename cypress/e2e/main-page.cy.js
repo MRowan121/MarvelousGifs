@@ -29,6 +29,7 @@ describe('main page', () => {
       cy.get('.search-field').type('Agatha Harkness').should('have.value', 'Agatha Harkness')
       cy.get('.search-btn').click()
     })
+    cy.intercept('GET', 'http://api.giphy.com/v1/gifs/search?q=Agatha%20Harkness&limit=20&api_key=QQRengN3S8waij1rwiejGypXXSF6lqN4', {fixture: 'characterGifs'})
     cy.url().should('eq', 'http://localhost:3000/Agatha%20Harkness')
   })
 
@@ -37,6 +38,7 @@ describe('main page', () => {
     .type('Agatha Harkness')
     cy.get('.search-btn')
     .click()
+    cy.intercept('GET', 'http://api.giphy.com/v1/gifs/search?q=Agatha%20Harkness&limit=20&api_key=QQRengN3S8waij1rwiejGypXXSF6lqN4', {fixture: 'characterGifs'})
     cy.url().should('eq', 'http://localhost:3000/Agatha%20Harkness')
     cy.get('.logo')
     .click()
@@ -57,6 +59,7 @@ describe('main page', () => {
     .type('Agatha Harkness')
     cy.get('.search-btn')
     .click()
+    cy.intercept('GET', 'http://api.giphy.com/v1/gifs/search?q=Agatha%20Harkness&limit=20&api_key=QQRengN3S8waij1rwiejGypXXSF6lqN4', {fixture: 'characterGifs'})
     cy.url().should('eq', 'http://localhost:3000/Agatha%20Harkness')
   })
 
