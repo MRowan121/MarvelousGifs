@@ -1,6 +1,6 @@
 describe('main page', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'http://api.giphy.com/v1/gifs/search?q=Agatha%20Harkness&limit=20&api_key=QQRengN3S8waij1rwiejGypXXSF6lqN4', {fixture: 'characterGifs'})
+    cy.intercept('GET', 'https://api.giphy.com/v1/gifs/search?q=Agatha%20Harkness&limit=20&api_key=QQRengN3S8waij1rwiejGypXXSF6lqN4', {fixture: 'characterGifs'})
     cy.visit('http://localhost:3000/Agatha%20Harkness')
   })
 
