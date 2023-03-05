@@ -1,5 +1,7 @@
 # Overview
-The purpose of this application is to enable a user to see various gifs of their favotire Marvel heroes and villains. Once a user has navigated to the main page, they have the option of searching in the input box or selecting a character's name directly from the list below it. After a selection has been made, the user will be routed to a page displaying their chosen character's name and gifs. The gif display utilizes slider.js and creates a slideshow effect for the returned results.
+The purpose of this application is to enable a user to see various gifs of their favotire Marvel heroes and villains. Once a user has navigated to the main page, they have the option of searching in the input box or selecting a character's name directly from the list below it. After a selection has been made, the user will be routed to a page displaying their chosen character's name and gifs. The gif display utilizes slider.js and creates a slideshow effect for the returned results. 
+
+This project utilizes an API created by [GIPHY](https://developers.giphy.com/).
 
 ## Technologies Used
 <div>
