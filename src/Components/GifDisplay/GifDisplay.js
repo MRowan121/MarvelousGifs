@@ -36,7 +36,7 @@ class GifDisplay extends Component {
                 text: 'Lets go home and try again!',
                 icon: 'error'
             }).then(() => {
-                window.location.href='http://localhost:3000/'
+                document.location.href = '/'
             });
         } else {
             getGifs(this.props.urlPath, 20)
