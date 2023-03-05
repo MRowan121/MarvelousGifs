@@ -1,13 +1,13 @@
 import React from "react";
 import './NameDisplay.css'
 import { Link } from "react-router-dom";
-import Form from "../Form/Form";
+import Form from '../Form/Form'
 
 const NameDisplay = ({ characterList, handleCallback }) => {
     
     const nameDisplay = characterList.map((name, index) => {
         return (
-          <Link to={`/character/${name}`} key={index}>
+          <Link to={`/${name}`} key={index} className={name}>
             <p className='underline'>{name}</p>
           </Link>
         )

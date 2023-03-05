@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getGifs } from '../Utilities/apiCalls'
+import { getGifs } from '../../Utilities/apiCalls'
 import { 
     Swiper, 
     SwiperSlide
@@ -39,7 +39,7 @@ class GifDisplay extends Component {
                 window.location.href='http://localhost:3000/'
             });
         } else {
-            getGifs(this.props.urlPath, 30)
+            getGifs(this.props.urlPath, 20)
             .then(data => {
                 data.data.forEach(obj => {
                     const gif = {}

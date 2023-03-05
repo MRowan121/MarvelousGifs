@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import './App.css'
-import characterList from '../Character-Data/characterList';
+import characterList from '../../Character-Data/characterList';
 import GifDisplay from '../GifDisplay/GifDisplay';
 import { Route } from 'react-router-dom';
 import NameDisplay from '../NameDisplay/NameDisplay';
-
 
 class App extends Component {
   constructor() {
@@ -14,10 +13,6 @@ class App extends Component {
       characters: [],
       userSelection: '',
     }
-  }
-
-  componentDidMount() {
-    this.setState({ characters: characterList})
   }
 
   handleCallback = (selection) => {
@@ -31,12 +26,12 @@ class App extends Component {
           <Route exact path='/' render={() => {
             return(
               <NameDisplay 
-                characterList={this.state.characters} 
+                characterList={characterList} 
                 handleCallback={this.handleCallback}
               />
             )
           }}/>
-          <Route exact path={`/character/:selection`} render={({ match }) => {
+          <Route exact path={`/:selection`} render={({ match }) => {
             let urlPath = match.params.selection
             return (
               <GifDisplay 

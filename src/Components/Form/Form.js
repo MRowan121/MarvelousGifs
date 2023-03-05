@@ -39,7 +39,7 @@ class Form extends Component {
             )
         })
 
-        const searchValidation = this.state.userSelection ? `/character/${this.state.userSelection}` :'/'
+        const searchValidation = this.state.userSelection ? `/${this.state.userSelection}` :'/'
 
         return (
             <form className="form" onChange={this.handleChange}>
