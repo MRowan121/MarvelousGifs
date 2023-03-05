@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import './App.css'
-import characterList from '../Character-Data/characterList';
+import characterList from '../../Character-Data/characterList';
 import GifDisplay from '../GifDisplay/GifDisplay';
 import { Route } from 'react-router-dom';
 import NameDisplay from '../NameDisplay/NameDisplay';

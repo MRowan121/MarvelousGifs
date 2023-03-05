@@ -1,7 +1,7 @@
 import React from "react";
 import './NameDisplay.css'
 import { Link } from "react-router-dom";
-import Form from "../Form/Form";
+import Form from '../Form/Form'
 
 const NameDisplay = ({ characterList, handleCallback }) => {
     

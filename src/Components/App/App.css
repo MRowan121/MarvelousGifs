@@ -1,6 +1,6 @@
 .app {
   align-items: center;
-  background-image: url("../Images/background.png");
+  background-image: url("../../Images/background.png");
   display: flex;
   flex-direction: column;
   font-family: 'Marvel', sans-serif;
@@ -10,7 +10,7 @@
 
 .info-display {
   align-items: center;
-  background-image: url("../Images/marvel-header.jpeg");
+  background-image: url("../../Images/marvel-header.jpeg");
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,7 +22,7 @@
 
 .text-container {
   align-items: center;
-  background-image: url("../Images/background.png");
+  background-image: url("../../Images/background.png");
   border-radius: 10px;
   box-shadow: 2px 2px 10px #555;
   box-sizing: border-box;

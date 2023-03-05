@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getGifs } from '../Utilities/apiCalls'
+import { getGifs } from '../../Utilities/apiCalls'
 import { 
     Swiper, 
     SwiperSlide
