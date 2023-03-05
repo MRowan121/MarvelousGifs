@@ -17,8 +17,7 @@ import "swiper/css/grid";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import swal from 'sweetalert'
-
-
+import PropTypes from 'prop-types'
 
 class GifDisplay extends Component {
     constructor() {
@@ -105,3 +104,7 @@ class GifDisplay extends Component {
 }
 
 export default GifDisplay;
+
+GifDisplay.propTypes = {
+    urlPath: PropTypes.string
+}
