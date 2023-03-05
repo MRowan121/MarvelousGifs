@@ -31,6 +31,9 @@ The purpose of this application is to enable a user to see various gifs of their
    ```
 
 ## GIF
+![marvel_searchCharacter](https://user-images.githubusercontent.com/110955503/222979072-3d072317-3445-4b5c-9d22-ff1eb86cfb25.gif)
+![marvel_selectCharacter](https://user-images.githubusercontent.com/110955503/222979078-d9276cf2-d2d9-4315-8b41-86cbe3f9ec9d.gif)
+![marvel_errorHandling](https://user-images.githubusercontent.com/110955503/222979083-f2d2c6e0-e577-4553-a53f-3ddc0be1fbad.gif)
 
 
 ## Contributors
