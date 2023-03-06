@@ -2,17 +2,17 @@
     display: flex;
     justify-content: center;
     position: relative;
-    width: 20vw;
+    width: 250px;
 }
 
 .search-field {
     border: 3px solid black;
     border-radius: 5px 0 0 5px;
     border-right: none;
-    height: 4vh;
+    height: 40px;
     font-family: 'Marvel', sans-serif;
     font-weight: 600;
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     outline: none;
     padding: 5px;
     width: 100%;
@@ -23,7 +23,7 @@
   }
 
   .btn-link {
-    height: 4vh;
+    height: 40px;
   }
 
   .search-btn {

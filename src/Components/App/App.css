@@ -32,12 +32,12 @@
   justify-content: space-around;
   padding: 2%;
   text-align: center;
-  width: 30%;
+  width: 360px;
 }
 
 .text-container > h1 {
   color: red;
-  font-size: 3vw;
+  font-size: 36px;
   margin: 0;
   text-align: center;
 }
