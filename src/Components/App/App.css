@@ -30,21 +30,14 @@
   flex-direction: column;
   height: 90%;
   justify-content: space-around;
-  padding: 2%;
+  padding: 25px;
   text-align: center;
-  width: 30%;
+  width: 360px;
 }
 
 .text-container > h1 {
   color: red;
-  font-size: 3vw;
-  margin: 0;
-  text-align: center;
-}
-
-.text-container > h2 {
-  color: red;
-  font-size: 3vw;
+  font-size: 36px;
   margin: 0;
   text-align: center;
 }
