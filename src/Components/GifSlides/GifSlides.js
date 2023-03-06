@@ -36,18 +36,39 @@ const GifSlides = ({ gifs }) => {
     
     return (
         <Swiper
-            slidesPerView={4}
+            breakpoints= {{
+                250: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                  grid: {
+                    fill: 'row',
+                    rows: 2
+                    }
+                },
+                550: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                    grid: {
+                        fill: 'row',
+                        rows: 2
+                    }
+                },
+                850: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                    grid: {
+                        fill: 'row',
+                        rows: 2
+                    }
+                },
+            }}
             autoplay={{
                 delay: 3000,
                 disableOnInteraction: true,
             }}
-            grid={{
-                rows: 2,
-            }}
             keyboard={{
                 enabled: true,
             }}
-            spaceBetween={30}
             navigation={true}
             modules={[Autoplay, Grid, Keyboard, Navigation]}
             className="mySwiper"
